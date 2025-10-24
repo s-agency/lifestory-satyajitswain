@@ -1524,8 +1524,30 @@
             alert('Thank you for your message! I will get back to you soon.');
             contactForm.reset();
         });
+    
+
 
         
+        
     </script>
+    <!-- 🚫 Disable Right-Click, Inspect & Shortcut Keys -->
+<script>
+// Disable right-click menu
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Disable common inspect & copy shortcuts
+document.addEventListener('keydown', e => {
+  // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U, Ctrl+S, Ctrl+C
+  if (
+    e.keyCode === 123 || // F12
+    (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key.toUpperCase())) ||
+    (e.ctrlKey && ['U','S','C'].includes(e.key.toUpperCase()))
+  ) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+});
+</script>
+
 </body>
 </html>
